@@ -1,14 +1,14 @@
 def merge_sort(list):  
     
-    if len(list) <= 1:         # [10,9,8,7] [10,9] [8,7]  
+    if len(list) <= 1:         # [10,9,8,7] [10,1] [4,3]   
         return list                         #[10]:left [9]:right [8]:left [7]:right
     
     left_half, right_half = split(list) 
-    left = merge_sort(left_half)
-    right = merge_sort(right_half)
+    left = merge_sort(left_half) 
+    right = merge_sort(right_half) 
     
     return merge(left, right)
-
+    
 def split(list):
     
     mid = len(list) // 2
@@ -18,13 +18,11 @@ def split(list):
     return left, right
     
 def merge(left, right):
-    
     l = []                 # l1=[7,8] l2=[9,10]
     left_index = 0
     right_index = 0
     
     while left_index < len(left) and right_index < len(right):
-        print(l)
         if left[left_index] < right[right_index]:
             l.append(left[left_index])
             left_index += 1
@@ -42,7 +40,5 @@ def merge(left, right):
     
     return l
 
-    
-
-sorted = merge_sort([10,9,8,7,6,5,4,3,2,1])
+sorted = merge_sort([55,33,8,100,20])
 print(sorted)
