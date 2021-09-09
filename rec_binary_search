@@ -1,0 +1,15 @@
+def rec_binary_search(list, target):
+    midpoint = len(list) // 2
+    
+    if len(list) == 0:
+        return False
+    else:
+        if list[midpoint] == target:
+            return list[midpoint]
+        while list[midpoint] < target:
+            return rec_binary_search(list[midpoint+1:], target)
+        while list[midpoint] > target:
+            return rec_binary_search(list[:midpoint], target)
+            
+list = [1,2,3,4,5,6,7,8,9]
+print(rec_binary_search(list,9))
