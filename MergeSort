@@ -40,5 +40,17 @@ def merge(left, right):
     
     return l
 
+
+
+
+def verify_sort(list):
+    n = len(list)
+    
+    if n == 0 or n == 1:
+        return True
+        
+    return list[0] < list[1] and verify_sort(list[1:])
+    
 sorted = merge_sort([55,33,8,100,20])
 print(sorted)
+print(verify_sort(sorted))
