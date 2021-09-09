@@ -15,3 +15,15 @@ output = lengths.printer()
 lengths.data = 50
 print(lengths.data)
 print(output)
+
+
+
+class Node1:
+    def __init__(self):
+        self.data = None
+        self.next_data = None
+
+l = Node1()  #empty list
+l.data = 10   
+l.next_data = 15    
+print(l.data, l.next_data)   
