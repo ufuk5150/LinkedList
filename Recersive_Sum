@@ -1,0 +1,10 @@
+numbers = [1,2]
+
+def addition(numbers):
+    if not numbers: 
+        return 0
+    
+    remaning_sum = addition(numbers[1:])
+    return numbers[0] + remaning_sum
+
+print(addition(numbers))
