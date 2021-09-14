@@ -1,0 +1,30 @@
+def merge_sort(values):
+    if len(values) <= 1:
+        return values
+
+    middle_index = len(values)//2
+    left_values = merge_sort(values[:middle_index])
+    print(left_values)
+    right_values = merge_sort(values[middle_index:])
+    print(right_values)
+    sorted_values = []
+    left_index = 0
+    right_index = 0
+
+    while right_index < len(right_values) and  left_index < len(left_values):
+        
+        if right_values[right_index] <= left_values[left_index]:
+            sorted_values.append(right_values[right_index])
+            right_index += 1
+        else:
+            sorted_values.append(left_values[left_index])
+            left_index += 1
+    
+    sorted_values += left_values[left_index:]
+    sorted_values += right_values[right_index:]
+    
+    return sorted_values
+    
+liste_1 = [5,1,22,100,3,5,10]
+
+print(merge_sort(liste_1))
