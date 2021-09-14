@@ -12,5 +12,5 @@ def quicksort(values):
             greater_than_pivot.append(value)
     return quicksort(less_than_pivot) + [pivot] + quicksort(greater_than_pivot)
 
-a = [7,5,2,10,40,0,3]
+a = [7,5,2,10,40,0,3] #strings can be sorted too
 print(quicksort(a))
