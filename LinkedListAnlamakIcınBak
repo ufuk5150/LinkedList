@@ -15,7 +15,7 @@ n2.next = n3
 n3.next = n4
 
 print(n1.data)
-print(n2.data)
-print(n3.data)
-print(n4.data)
-print(n4.next)
+print(n2.data,n1.next.data)
+print(n3.data,n1.next.next.data)
+print(n4.data,n1.next.next.next.data)
+print(n4.next,n1.next.next.next.next)
