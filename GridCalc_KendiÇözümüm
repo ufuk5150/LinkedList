@@ -9,4 +9,4 @@ def gridTraveller(x,y):
         return 0
     return factorial(x+y-2)/(factorial(x-1)*factorial(y-1))
     
-print(gridTraveller(3,3))
+print(gridTraveller(3,3))  #3x3'te sol üstten sağ alta kaç farklı yoldan gidilir
