@@ -1,0 +1,12 @@
+def factorial(number):
+    if number == 0 or number == 1:
+        return 1
+    else:
+        return number * factorial(number-1)
+        
+def gridTraveller(x,y):
+    if x == 0 or y == 0:
+        return 0
+    return factorial(x+y-2)/(factorial(x-1)*factorial(y-1))
+    
+print(gridTraveller(3,3))
