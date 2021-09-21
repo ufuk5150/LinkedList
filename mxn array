@@ -1,0 +1,6 @@
+def arr(m,n):
+    final_array = []
+    for i in range(m):
+        final_array.append(n*[0])
+    return final_array
+print(arr(3,3))
