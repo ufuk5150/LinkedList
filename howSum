@@ -15,3 +15,26 @@ def howSum(targetSum, numbers):
             
     return None
 print(howSum(7, [2,3,5]))
+
+
+
+def howSum(targetSum, numbers, memo = {}):
+    if targetSum in memo:
+        return memo[targetSum]
+        
+    if (targetSum == 0):
+        return []
+    if (targetSum < 0):
+        return None
+        
+    for num in numbers:
+        remainder = targetSum - num
+        remainderResult = howSum(remainder, numbers, memo)
+        
+        if remainderResult != None:
+            remainderResult.append(num)
+            memo[targetSum] = remainderResult
+            return memo[targetSum]
+            
+    return None
+print(howSum(10, [2,3,5]))
