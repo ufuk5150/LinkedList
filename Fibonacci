@@ -15,3 +15,20 @@ def fib(n, memo = {}):
     memo[n] =  fib(n-1,memo) + fib(n-2,memo)
     return memo[n]
 print(fib(30))
+
+
+
+def fib(n):
+    table = []
+    for i in range(n+2):
+        table.append(0)
+
+    table[1] = 1
+    
+    for i in range(n):
+        table[i+1] += table[i]
+        table[i+2] += table[i]
+    
+    return table[n]
+    
+print(fib(50))
