@@ -1,0 +1,29 @@
+class account:
+    a = 10
+    def __init__(self,person,password):
+        if person == "ufuk" and password == "1234":
+            self.initial_balance = 100
+        elif person == "berkay" and password == "4321":
+            self.initial_balance = 200
+        
+    def getBalance(self):
+        final_balance = self.initial_balance/10
+        print(final_balance)
+        self.initial_balance = final_balance
+        
+    def deposit(self,deposit):
+        final_balance = self.initial_balance - deposit
+        print(final_balance)
+        
+while True:
+    print("name:")
+    NAME = input()
+    print("password:")
+    PASSWORD = input()
+    
+    current_account = account(NAME,PASSWORD)
+    current_account.getBalance()
+    
+    print("enter how much:")
+    amount = int(input())
+    current_account.deposit(amount)
