@@ -1,0 +1,25 @@
+class Name:
+    def __init__(self,name):
+        self.name = name
+    def print_name(self):
+        print(self.name)
+        
+class Number:
+    def __init__(self,number):
+        self.number = number
+    def print_number(self):
+        print(self.number)
+        
+class Name_Number:
+    def __init__(self):
+        self.na = Name("ufuk")
+        self.nu = Number(123)
+        
+    def print_both(self):
+        self.na.print_name()  
+        self.nu.print_number()
+        
+
+A = Name_Number()
+A.print_both()
+  
