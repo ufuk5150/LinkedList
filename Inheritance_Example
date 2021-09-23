@@ -16,7 +16,7 @@ class Name_Number:
         self.nu = Number(123)
         
     def print_both(self):
-        self.na.print_name()  
+        self.na.print_name()    # .print_name and .print_number belongs to other classes but could be used in Name_Number class. it is called inheritance.
         self.nu.print_number()
         
 
