@@ -9,7 +9,7 @@ class account:
     def getBalance(self):
         final_balance = self.initial_balance/10
         print(final_balance)
-        self.initial_balance = final_balance
+        self.initial_balance = final_balance            #final_balance is encapsulated under getBalance and deposit funcs.
         
     def deposit(self,deposit):
         final_balance = self.initial_balance - deposit
