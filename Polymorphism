@@ -1,0 +1,16 @@
+class CheckBox:
+    def draw(self):
+        print("drawing checkbox")
+
+class TextBox:
+    def draw(self):
+        print("drawing textbox")
+
+def Control(control):
+    control.draw()      #.draw is used under Control function
+                        #for multipurposes (polymorphism)
+Check = CheckBox()
+Text = TextBox()
+
+Control(Check)
+Control(Text)
