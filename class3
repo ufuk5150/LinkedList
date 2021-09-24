@@ -1,0 +1,41 @@
+class Name:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    
+    def show(self):
+        print(f"name: {self.name} age: {self.age}")
+        
+    def speak(self):
+        print("harummmm")
+        
+class UFUK(Name):
+    def speak(self):
+        print("hellöööö")
+
+class Harum(Name):
+    pass
+
+class Avyonik(Name):
+    def __init__(self,name,age,length):
+        super().__init__(name,age)
+        self.length = length
+            
+    def speak(self):
+        print("Biz avyoniğiiiizzz!!!")
+        
+    def show(self):
+        print(f"adimiz: {self.name} yaşımız: {self.age} ve de boyumuz: {self.length}")
+
+
+u = UFUK("ufuk", 100)
+u.show()
+u.speak()
+
+h = Harum("harum", 0)
+h.show()
+h.speak()
+
+A = Avyonik("AVYOMİK", -50, "30")
+A.speak()
+A.show()
