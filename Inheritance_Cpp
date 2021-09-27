@@ -8,15 +8,12 @@ class AbstractEmployee {
 };
 class Employee:AbstractEmployee {
 private:
-
-   
     int Age;
 
 protected:
     string Name;
     
 public:
-
     void setName(string name){
         Name = name;
     }
@@ -44,7 +41,7 @@ public:
             cout << Name << " sorryyy..." << endl;
     }
 };
-class Developer:Employee{ 
+class Developer: public Employee{  //public***
 //developer:child/subclass/derived class   
 //employee parent/superclass/base class
 public:
@@ -62,12 +59,24 @@ public:
         AskPromotion();
     }
     void D_getName() {
-        cout << getName();
+        cout << getName() << endl;
     }
     void D_getAge() {
-        cout << getAge();
+        cout << getAge() << endl;
     }
 };
+
+class Teacher:Employee{
+    string Subject;
+public:
+    void PrepareLesson() {
+        cout << getName() << " is preparing " << Subject << endl;
+    }    
+    Teacher(string name,int age, string subject):Employee(name,age) {
+        Subject = subject;
+    }
+};
+
 int main() { 
     
     Developer d = Developer("ufuk",25,"c++");
@@ -75,5 +84,13 @@ int main() {
     d.D_AskPromotion();
     d.D_getName();
     d.D_getAge();
+    d.AskPromotion();       //public*** enables to use in this form
+    
+    Teacher T = Teacher("berkay", 50, "OOP");
+    T.PrepareLesson();
+    //T.AskPromotion(); //do not work since Employe is not public.
+    
+
+    
     return 0;
 }
