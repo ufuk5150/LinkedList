@@ -2,11 +2,11 @@
 using namespace std;
 
 class AbstractEmployee {
-    virtual void AskPromotion()=0;  
+    virtual void AskPromotion()=0;      //abstracted here
 };
 class Employee:AbstractEmployee {
 private:
-    string Name;    //encapsulated variables
+    string Name;    
     int Age;
     
 public:
