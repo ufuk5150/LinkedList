@@ -1,6 +1,6 @@
 #include <iostream>
 using std::cout;
-using std::string;      //inheritance
+using std::string;    
 using std::endl;
 
 class AbstractEmployee {
@@ -8,10 +8,15 @@ class AbstractEmployee {
 };
 class Employee:AbstractEmployee {
 private:
-    string Name;    //encapsulated variables
+
+   
     int Age;
+
+protected:
+    string Name;
     
 public:
+
     void setName(string name){
         Name = name;
     }
@@ -51,9 +56,16 @@ public:
 
     void FixBug() {
         cout << getName() << " fixed by " << FavProgrammingLanguage << endl;
+        cout << Name << " fixed by " << FavProgrammingLanguage << endl;
     }
     void D_AskPromotion() {
         AskPromotion();
+    }
+    void D_getName() {
+        cout << getName();
+    }
+    void D_getAge() {
+        cout << getAge();
     }
 };
 int main() { 
@@ -61,6 +73,7 @@ int main() {
     Developer d = Developer("ufuk",25,"c++");
     d.FixBug();
     d.D_AskPromotion();
-    
+    d.D_getName();
+    d.D_getAge();
     return 0;
 }
