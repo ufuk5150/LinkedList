@@ -1,0 +1,96 @@
+#include <iostream>
+using std::cout;
+using std::string;    
+using std::endl;
+
+class AbstractEmployee {
+    virtual void AskPromotion()=0;  
+};
+class Employee:AbstractEmployee {
+private:
+    int Age;
+
+protected:
+    string Name;
+    
+public:
+    void setName(string name){
+        Name = name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setAge(int age){
+        Age = age;
+    }
+    int getAge(){
+        return Age;
+    }
+    void introduce() {
+        cout << "Name: " << Name << endl;
+        cout << "Age: " << Age << endl;
+    }
+    Employee(string name,int age) {
+        Name = name;
+        Age = age;
+    } 
+    void AskPromotion() {
+        if (Age > 30)
+            cout << Name << " got it" << endl;
+        else
+            cout << Name << " sorryyy..." << endl;
+    }
+    virtual void Work() {    //it will be executed if childclasses dont have Work() method.
+        cout << Name << " is just working..." << endl;
+    }
+};
+class Developer: public Employee{  //public***
+//developer:child/subclass/derived class   
+//employee parent/superclass/base class
+public:
+    string FavProgrammingLanguage;
+    
+    Developer(string name,int age,string fav):Employee(name,age) {
+    FavProgrammingLanguage = fav; 
+    }
+
+    void FixBug() {
+        cout << getName() << " fixed by " << FavProgrammingLanguage << endl;
+        cout << Name << " fixed by " << FavProgrammingLanguage << endl;
+    }
+    void Work() {
+        cout << Name << " is programming." << endl;
+    }
+};
+
+class Teacher: public Employee{
+    string Subject;
+public:
+    void PrepareLesson() {
+        cout << getName() << " is preparing " << Subject << endl;
+    }    
+    Teacher(string name,int age, string subject):Employee(name,age) {
+        Subject = subject;
+    }
+  /*  void Work(){
+        cout << getName() << " is teaching." << endl;
+    }*/
+};
+
+int main() { 
+    
+    Developer d = Developer("ufuk",25,"c++");
+    Teacher t = Teacher("berkay", 50, "OOP");
+    
+    t.Work();  // polymorphism. Work() is defined in both class differently.
+    d.Work();   
+
+    Employee *e1 = &d;
+    Employee *e2 = &t;
+    
+    e1->Work();
+    e2->Work();
+    
+    
+    return 0;
+}
