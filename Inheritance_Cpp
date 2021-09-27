@@ -1,0 +1,66 @@
+#include <iostream>
+using std::cout;
+using std::string;      //inheritance
+using std::endl;
+
+class AbstractEmployee {
+    virtual void AskPromotion()=0;  
+};
+class Employee:AbstractEmployee {
+private:
+    string Name;    //encapsulated variables
+    int Age;
+    
+public:
+    void setName(string name){
+        Name = name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setAge(int age){
+        Age = age;
+    }
+    int getAge(){
+        return Age;
+    }
+    void introduce() {
+        cout << "Name: " << Name << endl;
+        cout << "Age: " << Age << endl;
+    }
+    Employee(string name,int age) {
+        Name = name;
+        Age = age;
+    } 
+    void AskPromotion() {
+        if (Age > 30)
+            cout << Name << " got it" << endl;
+        else
+            cout << Name << " sorryyy..." << endl;
+    }
+};
+class Developer:Employee{ 
+//developer:child/subclass/derived class   
+//employee parent/superclass/base class
+public:
+    string FavProgrammingLanguage;
+    
+    Developer(string name,int age,string fav):Employee(name,age) {
+    FavProgrammingLanguage = fav; 
+    }
+
+    void FixBug() {
+        cout << getName() << " fixed by " << FavProgrammingLanguage << endl;
+    }
+    void D_AskPromotion() {
+        AskPromotion();
+    }
+};
+int main() { 
+    
+    Developer d = Developer("ufuk",25,"c++");
+    d.FixBug();
+    d.D_AskPromotion();
+    
+    return 0;
+}
