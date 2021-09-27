@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+public:
+    string Name;
+    int Age;
+    
+    Employee(string name,int age){
+        Age = age;
+        Name = name;
+    }
+    
+    void introduce(){
+        cout << Name << endl;  
+        cout << Age << endl;
+    }
+};
+
+int main() { 
+    
+    Employee employee1 = Employee("ufuk",25);
+    employee1.introduce();
+    employee1.Age += 10;
+    employee1.Name = "berkay";
+    employee1.introduce();
+    
+    Employee employee2 = Employee("harum",0);
+    employee2.introduce();
+    employee2.Age -= 10;
+    employee2.Name = "harrrum";
+    employee2.introduce();
+    
+    return 0;
+}
