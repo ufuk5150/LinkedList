@@ -1,0 +1,12 @@
+class car:
+    def __init__(self,model,cost):
+        self.model=model
+        self.cost=cost
+    def increase(self):
+        self.cost = int(self.cost*1.15)
+
+honda = car("jazz",5000)
+honda.cc=1500
+volkswagen = car("golf",10000)
+print(honda.__dict__)
+print(volkswagen.__dict__)        
