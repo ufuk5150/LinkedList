@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    string Name;    //encapsulated variables
+    int Age;
+    
+public:
+    void setName(string name){
+        Name = name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setAge(int age){
+        if(age>18)
+        Age = age;
+    }
+    int getAge(){
+        return Age;
+    }
+    void introduce() {
+        cout << "Name: " << Name << endl;
+        cout << "Age: " << Age << endl;
+    }
+    Employee(string name,int age) {
+        Name = name;
+        Age = age;
+    } 
+};
+    
+int main() { 
+    
+    Employee employee1 = Employee("ufuk",25);
+    employee1.introduce();
+    employee1.setName("UFUK");
+    employee1.setAge(35);
+    cout << employee1.getAge() << endl;
+    employee1.setAge(15);
+    cout << employee1.getAge() << endl;
+    
+    
+    
+    return 0;
+}
