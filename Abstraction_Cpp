@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+class AbstractEmployee {
+    virtual void AskPromotion()=0;  
+};
+class Employee:AbstractEmployee {
+private:
+    string Name;    //encapsulated variables
+    int Age;
+    
+public:
+    void setName(string name){
+        Name = name;
+    }
+    string getName(){
+        return Name;
+    }
+    void setAge(int age){
+        Age = age;
+    }
+    int getAge(){
+        return Age;
+    }
+    void introduce() {
+        cout << "Name: " << Name << endl;
+        cout << "Age: " << Age << endl;
+    }
+    Employee(string name,int age) {
+        Name = name;
+        Age = age;
+    } 
+    void AskPromotion() {
+        if (Age > 30)
+            cout << Name << " got it" << endl;
+        else
+            cout << Name << " sorryyy..." << endl;
+        
+    }
+};
+    
+int main() { 
+    
+    Employee employee1 = Employee("ufuk",25);
+    employee1.AskPromotion();
+    employee1.setAge(35);
+    employee1.AskPromotion();
+    
+    
+    return 0;
+}
