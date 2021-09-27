@@ -72,7 +72,7 @@ public:
     Teacher(string name,int age, string subject):Employee(name,age) {
         Subject = subject;
     }
-  /*  void Work(){
+    /*void Work(){
         cout << getName() << " is teaching." << endl;
     }*/
 };
@@ -90,7 +90,6 @@ int main() {
     
     e1->Work();
     e2->Work();
-    
     
     return 0;
 }
