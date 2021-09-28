@@ -1,0 +1,52 @@
+#include <iostream>
+using std::cout;
+using std::endl;
+using namespace std;
+void printNumber(int *numberPtr){
+    cout << *numberPtr << endl;
+};
+
+void printLetter(char *letterPtr){
+    cout << *letterPtr << endl;
+};
+
+void print(void *ptr, char type){
+    switch(type) {
+        case 'i': 
+            cout << *((int*)ptr) << endl;break;
+        case 'c': 
+            cout << *((char*)ptr) << endl;break;
+    }
+};
+
+int main(){
+
+    int a = 6;
+    int b = 5;
+    int c = 100;
+    int d = 200;
+
+    int *ptr = &a;
+    int *ptr1 = &b;
+    int *ptr2 = &c;
+    int *ptr3 = &d;
+    
+    cout << *(ptr) << endl;
+    cout << *(ptr+3) << endl;
+    
+    int e;
+    int *ptr_e = &e;
+    *ptr_e = 10;
+    cout << e << endl;
+
+    printNumber(&e);
+    printNumber(ptr_e);
+    
+    char f = 'F';
+    
+    printLetter(&f);
+    
+    print(&e, 'i');
+    print(&f, 'c');
+    return 0;
+}
