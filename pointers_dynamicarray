@@ -1,0 +1,25 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+
+int main() {
+    int size;
+    cin >> size;
+    
+    int *myArray = new int[size]; //dynamic array, allocates memo
+    for(int i = 0; i < size ; i++){
+        cout << "Array[" << i << "] ";
+        cin >> *(myArray+i);
+    }
+    for(int i = 0; i < size ; i++){
+        cout << *(myArray+i) << endl;
+    }
+    
+    delete[]myArray;
+    myArray = NULL;
+        for(int i = 0; i < size ; i++){
+        cout << *(myArray+i) << endl;
+    }
+    return 0;
+}
