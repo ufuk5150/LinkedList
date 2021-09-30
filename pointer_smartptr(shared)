@@ -1,0 +1,32 @@
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class MyClass {
+public:
+    
+    MyClass() {
+        cout << "constructed" << endl;
+    }
+    
+    ~MyClass() {
+        cout << "Deconstructed" << endl;
+    }
+};
+
+int main() {
+    {
+    shared_ptr<MyClass>shPtr1 = make_shared<MyClass>();
+    cout << shPtr1.use_count() << endl; //1 shared
+    shared_ptr<MyClass>shPtr2 = shPtr1;
+    cout << shPtr1.use_count() << endl; //2 shared
+
+    {
+    shared_ptr<MyClass>shPtr2 = shPtr1;
+    cout << shPtr1.use_count() << endl; //3 shared
+    }
+    cout << shPtr1.use_count() << endl; //2 again
+    }       //0 shared after here, all is deallocated
+    
+    return 0;
+}
