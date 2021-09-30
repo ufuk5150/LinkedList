@@ -1,0 +1,24 @@
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class MyClass {
+public:
+    
+    MyClass() {
+        cout << "constructed" << endl;
+    }
+    
+    ~MyClass() {
+        cout << "Deconstructed" << endl;
+    }
+};
+
+int main() {
+    
+    unique_ptr<MyClass>unPtr1 = make_unique<MyClass>();
+    unique_ptr<MyClass>unPtr2 = unPtr2; //cannot be shared
+    
+    
+    return 0;
+}
