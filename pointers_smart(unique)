@@ -17,7 +17,7 @@ public:
 int main() {
     
     unique_ptr<MyClass>unPtr1 = make_unique<MyClass>();
-    unique_ptr<MyClass>unPtr2 = unPtr2; //cannot be shared
+    unique_ptr<MyClass>unPtr2 = unPtr2; //cannot be shared, weak pointers do not make any value alive while share pointers do.
     
     
     return 0;
