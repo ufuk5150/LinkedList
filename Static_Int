@@ -1,0 +1,23 @@
+#include <iostream>
+using std::cout;
+using namespace std;
+
+int *fun(){
+    static int x = 5;
+    return &x;
+}
+
+int *fun1(){
+    int x = 5;
+    return &x;
+}
+
+int main() {
+    
+    int *adress = fun();
+    int *adress1 = fun1();
+    cout << *adress << endl;
+    cout << adress << endl;
+    cout << *adress1 << endl;
+    return 0;
+}
