@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int x = 54;
+    char y = 'a';
+
+    void *ptr;
+    
+    ptr = &x;
+    cout << *((int*)ptr) << endl;
+    ptr = &y;
+    cout << *((char*)ptr) << endl;
+    
+    return 0;
+}
