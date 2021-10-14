@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+struct phone {
+    int number;
+};
+
+struct person {
+    string name;
+    phone nu;
+};
+
+
+
+int main() {
+    
+    phone ph1;
+    ph1.number = 50;
+    
+    person ufuk;
+    ufuk.name = "ufuk";
+    ufuk.nu = ph1;
+    
+    cout << ufuk.nu.number;
+  
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
