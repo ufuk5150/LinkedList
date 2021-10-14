@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class tai{
+public:
+    string name;
+    int number;
+    tai(string na, int nu) {
+        name = na;
+        number = nu;
+    }
+};
+
+struct TAI {
+    string name1;
+    int number1;
+};
+
+void printer_class(tai person) {
+    cout << person.name << endl;
+    cout << person.number << endl;
+}
+
+void printer_struct(TAI person) {
+    cout << person.name1 << endl;
+    cout << person.number1 << endl;
+}
+
+int main() {
+
+    tai person1("ufuk",250);
+    printer_class(person1);
+    
+    TAI person2;
+    person2.name1 = "berkay";
+    person2.number1 = 10;
+    printer_struct(person2);
+    
+    
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
