@@ -9,6 +9,15 @@ struct person {
     phone nu;
 };
 
+void print_number(phone B) {
+    cout << B.number << endl;
+}
+
+void print_person(person A) {
+    cout << A.name << " 1" << endl;
+    cout << A.nu.number << " 2" << endl;
+    print_number(A.nu);
+}
 
 
 int main() {
@@ -20,16 +29,8 @@ int main() {
     ufuk.name = "ufuk";
     ufuk.nu = ph1;
     
-    cout << ufuk.nu.number;
-  
+    print_number(ph1);
+    print_person(ufuk);
     
     return 0;
 }
-
-
-
-
-
-
-
-
